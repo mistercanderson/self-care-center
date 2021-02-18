@@ -6,3 +6,92 @@ dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
 */
+
+body {
+  background: linear-gradient(to bottom, #134d71, #78a7c6, #f7e4bf);
+  background-attachment: fixed;
+  font-family: 'Quicksand';
+  color: white;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+img {
+  width: 6em;
+}
+
+input[type=radio] {
+  margin: 0;
+  width: 1.5vw;
+}
+
+label {
+  padding-left: 1.5vw;
+}
+
+.title {
+  font-size: 3vw;
+  margin-top: 0;
+  margin-bottom: 4vw;
+}
+
+.prompt {
+  font-size: 2vw;
+}
+
+.message-select {
+  width: 50vw;
+  display: inherit;
+  flex-direction: inherit;
+  justify-content: inherit;
+  align-items: inherit;
+  font-size: 1.2vw;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 2px;
+  padding: 1vw 0;
+  margin-bottom: 8vw;
+}
+
+.radio-inputs {
+  width: 30vw;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 2vw;
+}
+
+.radios {
+  font-style: italic;
+  display: flex;
+  align-items: center;
+}
+
+.receive-button {
+  font-size: 1.2vw;
+  background: #134d71;
+  color: white;
+  font-family: 'Quicksand';
+  border: none;
+  border-radius: 2px;
+}
+
+.notification {
+width: 65vw;
+display: inherit;
+flex-direction: inherit;
+justify-content: inherit;
+align-items: inherit;
+font-size: 1.2vw;
+background: white;
+color: black;
+border: none;
+border-radius: 2px;
+padding: 3vw 0;
+margin-bottom: 12vw;
+}
