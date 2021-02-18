@@ -54,7 +54,7 @@ label {
   background: white;
   color: black;
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
   padding: 1vw 0;
   margin-bottom: 8vw;
 }
@@ -78,7 +78,7 @@ label {
   color: white;
   font-family: 'Quicksand';
   border: none;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 .notification {
@@ -91,7 +91,7 @@ font-size: 1.2vw;
 background: white;
 color: black;
 border: none;
-border-radius: 2px;
+border-radius: 5px;
 padding: 3vw 0;
 margin-bottom: 12vw;
 }
