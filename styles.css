@@ -11,9 +11,11 @@ body {
   color: white;
   font-family: 'Quicksand';
 }
+
 .affirmations-background {
   background-image: linear-gradient(to bottom, #134d71, #78a7c6, #f7e4bf);
 }
+
 .mantras-background {
   background: linear-gradient(to bottom, #F2AAC5, #78a7c6, #134d71);
   opacity: 1;
@@ -92,7 +94,7 @@ label {
   align-items: center;
 }
 
-button {
+.receive-button {
   font-size: 1vw;
   width: 30%;
   background: #134d71;
@@ -104,12 +106,13 @@ button {
   transition: all 0.25s ease-in;
 }
 
-button:hover {
+.receive-button:hover {
   background: #78a7c6;
   transition: all 0.25s ease-in;
 }
-button:focus {
-  outline:0;
+
+.receive-button:focus {
+  outline: 0;
 }
 
 .notification {
@@ -141,10 +144,128 @@ button:focus {
 .bell {
   position: absolute;
   width: 6em;
+  height: 6em;
   transition: opacity 2s ease-in;
 }
 
+.hidden-icon {
+  opacity: 0;
+  transition: opacity 3s ease-out;
+}
 .hidden {
   opacity: 0;
   transition: opacity 0.5s ease-out;
+}
+
+.halo-mid {
+  -webkit-animation: halomid 0.75s ease-in infinite alternate;
+  -moz-animation: halomid 0.75s ease-in infinite alternate;
+  -o-animation: halomid 0.75s ease-in infinite alternate;
+  animation: halomid 0.75s ease-in infinite alternate;
+}
+.halo-side {
+  -webkit-animation: haloside 0.75s ease-in infinite alternate;
+  -moz-animation: haloside 0.75s ease-in infinite alternate;
+  -o-animation: haloside 0.75s ease-in infinite alternate;
+  animation: haloside 0.75s ease-in infinite alternate;
+}
+
+@-webkit-keyframes halomid {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(-10px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(10px, 10px, 0px);
+  }
+}
+@-o-keyframes halomid {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(-10px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(10px, 10px, 0px);
+  }
+}
+@-moz-keyframes halomid {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(-10px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(10px, 10px, 0px);
+  }
+}
+@keyframes halomid {
+  0% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+  50% {
+    transform: translate3d(-10px, 0px, 0px);
+  }
+  100% {
+    transform: translate3d(10px, 10px, 0px);
+  }
+}
+@-webkit-keyframes haloside {
+  0% {
+    transform: translate3d(-20px, 0px, 0px);
+  }
+
+  50% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+
+  100% {
+    transform: translate3d(20px, -20px, 0px);
+  }
+}
+
+@-o-keyframes haloside {
+  0% {
+    transform: translate3d(-20px, 0px, 0px);
+  }
+
+  50% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+
+  100% {
+    transform: translate3d(20px, -20px, 0px);
+  }
+}
+
+@-moz-keyframes haloside {
+  0% {
+    transform: translate3d(-20px, 0px, 0px);
+  }
+
+  50% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+
+  100% {
+    transform: translate3d(20px, -20px, 0px);
+  }
+}
+
+@keyframes haloside {
+  0% {
+    transform: translate3d(-20px, 0px, 0px);
+  }
+
+  50% {
+    transform: translate3d(0px, 0px, 0px);
+  }
+
+  100% {
+    transform: translate3d(20px, -20px, 0px);
+  }
 }

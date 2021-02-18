@@ -39,12 +39,15 @@ var radios = document.getElementsByName('radAnswer');
 var affirmationRadio = document.getElementById('affirmation-select');
 var mantraRadio = document.getElementById('mantra-select')
 var selectSection = document.querySelector('.message-select');
-var messageSection = document.querySelector('.notification')
+var messageSection = document.querySelector('.notification');
+var haloMid = document.querySelector('.mid');
+var haloSide = document.querySelectorAll('.side');
 
 messageButton.addEventListener('click', receiveMessage);
-mantraRadio.addEventListener('click', changeBackground);
-affirmationRadio.addEventListener('click', changeBackground);
-
+mantraRadio.addEventListener('click', selectMessageType);
+affirmationRadio.addEventListener('click', selectMessageType);
+messageSection.onmouseover = animateHalo;
+messageSection.onmouseout = animateHalo;
 
 function generateRandomNum(arr) {
   return Math.floor(Math.random() * arr.length)
@@ -64,22 +67,38 @@ function mantraOrAffirmation() {
   }
 }
 
-function receiveMessage() {
-  if (message.classList.contains('hidden')) {
-    mantraOrAffirmation()
-    message.classList.remove('hidden');
-    meditationIcon.classList.add('hidden')
+function animateHalo() {
+  if (!haloMid.classList.contains('halo-mid')) {
+    haloMid.classList.add('halo-mid');
+    for (var i = 0; i < haloSide.length; i++) {
+      haloSide[i].classList.add('halo-side');
+    }
   } else {
-    messageButton.innerText = 'Receive Message'
-    messageSection.style.background = 'white';
-    selectSection.style.background = '#EAF9FA'
-    message.classList.add('hidden');
-    meditationIcon.classList.remove('hidden')
+    haloMid.classList.remove('halo-mid');
+    for (var i = 0; i < haloSide.length; i++) {
+      haloSide[i].classList.remove('halo-side');
+    }
   }
 }
 
-function changeBackground() {
-  if (meditationIcon.classList.contains('hidden') &&
+function receiveMessage() {
+  if (message.classList.contains('hidden')) {
+    mantraOrAffirmation();
+    animateHalo();
+    message.classList.remove('hidden');
+    meditationIcon.classList.add('hidden-icon')
+  } else {
+    messageButton.innerText = 'Receive Message'
+    animateHalo();
+    messageSection.style.background = 'white';
+    selectSection.style.background = '#EAF9FA'
+    message.classList.add('hidden');
+    meditationIcon.classList.remove('hidden-icon')
+  }
+}
+
+function selectMessageType() {
+  if (meditationIcon.classList.contains('hidden-icon') &&
     message.innerText === 'Please select a message type ⬆️') {
     message.innerText = 'Sounds good. Hit \'Clear\' to begin. '
     messageSection.style.background = '#EAF9FA';
