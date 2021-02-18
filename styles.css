@@ -50,11 +50,11 @@ label {
   flex-direction: inherit;
   justify-content: inherit;
   align-items: inherit;
-  font-size: 1.2vw;
+  font-size: 1vw;
   background: white;
   color: black;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   padding: 1vw 0;
   margin-bottom: 8vw;
 }
@@ -73,12 +73,13 @@ label {
 }
 
 .receive-button {
-  font-size: 1.2vw;
+  font-size: 1vw;
   background: #134d71;
   color: white;
   font-family: 'Quicksand';
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  padding: 0 5%
 }
 
 .notification {
@@ -91,7 +92,7 @@ font-size: 1.2vw;
 background: white;
 color: black;
 border: none;
-border-radius: 5px;
+border-radius: 8px;
 padding: 3vw 0;
 margin-bottom: 12vw;
 }
