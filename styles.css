@@ -6,12 +6,17 @@ dark-blue - #134d71;
 white - #ffffff;
 black - #000000;
 */
-
 body {
-  background: linear-gradient(to bottom, #134d71, #78a7c6, #f7e4bf);
   background-attachment: fixed;
-  font-family: 'Quicksand';
   color: white;
+  font-family: 'Quicksand';
+}
+.affirmations-background {
+  background-image: linear-gradient(to bottom, #134d71, #78a7c6, #f7e4bf);
+}
+.mantras-background {
+  background: linear-gradient(to bottom, #F2AAC5, #78a7c6, #134d71);
+  opacity: 1;
 }
 
 main {
@@ -19,10 +24,6 @@ main {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-}
-
-img {
-  width: 6em;
 }
 
 input[type=radio] {
@@ -38,10 +39,23 @@ label {
   font-size: 3vw;
   margin-top: 0;
   margin-bottom: 4vw;
+  transition: color 0.5s;
+}
+
+.title:hover {
+  color: #ccf2f4;
+  transition: color 0.5s;
 }
 
 .prompt {
   font-size: 2vw;
+  margin-bottom: 1vw;
+  transition: color 0.5s;
+}
+
+.prompt:hover {
+  color: #ccf2f4;
+  transition: color 0.5s;
 }
 
 .message-select {
@@ -57,6 +71,12 @@ label {
   border-radius: 8px;
   padding: 1vw 0;
   margin-bottom: 8vw;
+  transition: background-color 0.5s ease-in;
+}
+
+.message-select:hover {
+  background: #EAF9FA;
+  transition: background-color 0.5s ease-in;
 }
 
 .radio-inputs {
@@ -72,27 +92,59 @@ label {
   align-items: center;
 }
 
-.receive-button {
+button {
   font-size: 1vw;
+  width: 30%;
   background: #134d71;
   color: white;
   font-family: 'Quicksand';
   border: none;
-  border-radius: 4px;
-  padding: 0 5%
+  border-radius: 8px;
+  padding: 0.5% 5%;
+  transition: all 0.25s ease-in;
+}
+
+button:hover {
+  background: #78a7c6;
+  transition: all 0.25s ease-in;
+}
+button:focus {
+  outline:0;
 }
 
 .notification {
-width: 65vw;
-display: inherit;
-flex-direction: inherit;
-justify-content: inherit;
-align-items: inherit;
-font-size: 1.2vw;
-background: white;
-color: black;
-border: none;
-border-radius: 8px;
-padding: 3vw 0;
-margin-bottom: 12vw;
+  width: 65vw;
+  height: 5vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2vw;
+  background: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  padding: 3vw 0;
+  margin-bottom: 12vw;
+  transition: background-color 0.5s ease-in;
+}
+
+.notification:hover {
+  background: #EAF9FA;
+  transition: background-color 0.5s ease-in;
+}
+
+.message {
+  padding: 2vw 0;
+  transition: opacity 2s ease-in;
+}
+
+.bell {
+  position: absolute;
+  width: 6em;
+  transition: opacity 2s ease-in;
+}
+
+.hidden {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
 }

@@ -6,25 +6,26 @@
   <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="affirmations-background">
   <main>
     <h1 class="title">✨ Self Care Center ✨</h1>
     <h4 class="prompt">Which type of message?</h4>
     <section class="message-select">
       <div class="radio-inputs">
         <div class="radios">
-          <input type="radio" id="affirmation-select" name="affirmation" value="message">
+          <input type="radio" id="affirmation-select" name="radAnswer" value="affirmations">
           <label for="affirmation-select">affirmation</label>
         </div>
         <div class="radios">
-          <input type="radio" id="mantra-select" name="mantra" value="message">
+          <input class="mantra" type="radio" id="mantra-select" name="radAnswer" value="mantras">
           <label for="mantra-select">mantra</label>
         </div>
       </div>
-      <button type="button" class="receive-button">Receive Message</button>
+        <button type="button" class="receive-button">Receive Message</button>
     </section>
     <section class="notification">
-      <img src="assets/meditate.svg" alt="">
+      <img class="bell" src="assets/meditate.svg" alt="meditation bell">
+      <div class="message hidden">Please select a message type ⬆️</div>
     </section>
   </main>
   <script type="text/javascript" src="main.js"></script>
