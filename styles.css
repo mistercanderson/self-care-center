@@ -138,19 +138,19 @@ label {
 
 .message {
   padding: 2vw 0;
-  transition: opacity 2s ease-in;
+  transition: opacity 4s ease-in;
 }
 
 .bell {
   position: absolute;
-  width: 6em;
+  width: 10em;
   height: 6em;
-  transition: opacity 2s ease-in;
+  transition: opacity 0.5s ease-in;
 }
 
 .hidden-icon {
   opacity: 0;
-  transition: opacity 3s ease-out;
+  transition: opacity 5s ease-out;
 }
 .hidden {
   opacity: 0;
@@ -158,114 +158,59 @@ label {
 }
 
 .halo-mid {
-  -webkit-animation: halomid 0.75s ease-in infinite alternate;
+  /* -webkit-animation: halomid 0.75s ease-in infinite alternate;
   -moz-animation: halomid 0.75s ease-in infinite alternate;
-  -o-animation: halomid 0.75s ease-in infinite alternate;
-  animation: halomid 0.75s ease-in infinite alternate;
+  -o-animation: halomid 0.75s ease-in infinite alternate; */
+  animation: halopulse 0.75s ease-in-out alternate infinite;
 }
 .halo-side {
-  -webkit-animation: haloside 0.75s ease-in infinite alternate;
+  /* -webkit-animation: haloside 0.75s ease-in infinite alternate;
   -moz-animation: haloside 0.75s ease-in infinite alternate;
-  -o-animation: haloside 0.75s ease-in infinite alternate;
-  animation: haloside 0.75s ease-in infinite alternate;
+  -o-animation: haloside 0.75s ease-in infinite alternate; */
+  animation: halopulse 0.75s ease-in-out alternate infinite;
+  animation-delay: 0.05s;
+}
+.body-parts {
+  /* z-index: 0; */
+}
+.halo-parts {
+  /* position: relative;
+  z-index: -1; */
 }
 
-@-webkit-keyframes halomid {
-  0% {
-    transform: translate3d(0px, 0px, 0px);
-  }
-  50% {
-    transform: translate3d(-10px, 0px, 0px);
-  }
-  100% {
-    transform: translate3d(10px, 10px, 0px);
-  }
-}
+/* @-webkit-keyframes halomid {
+
 @-o-keyframes halomid {
-  0% {
-    transform: translate3d(0px, 0px, 0px);
-  }
-  50% {
-    transform: translate3d(-10px, 0px, 0px);
-  }
-  100% {
-    transform: translate3d(10px, 10px, 0px);
-  }
-}
-@-moz-keyframes halomid {
-  0% {
-    transform: translate3d(0px, 0px, 0px);
-  }
-  50% {
-    transform: translate3d(-10px, 0px, 0px);
-  }
-  100% {
-    transform: translate3d(10px, 10px, 0px);
-  }
-}
-@keyframes halomid {
-  0% {
-    transform: translate3d(0px, 0px, 0px);
-  }
-  50% {
-    transform: translate3d(-10px, 0px, 0px);
-  }
-  100% {
-    transform: translate3d(10px, 10px, 0px);
-  }
-}
-@-webkit-keyframes haloside {
-  0% {
-    transform: translate3d(-20px, 0px, 0px);
-  }
 
-  50% {
-    transform: translate3d(0px, 0px, 0px);
-  }
+@-moz-keyframes halomid { */
 
+@keyframes halorotate {
+  0% {
+    transform-origin: center center;
+
+  }
   100% {
-    transform: translate3d(20px, -20px, 0px);
+    transform-origin: center center;
+    transform: rotate3d(0, 2, -1, 360deg);
   }
 }
+/* @-webkit-keyframes haloside {
+
 
 @-o-keyframes haloside {
-  0% {
-    transform: translate3d(-20px, 0px, 0px);
-  }
 
-  50% {
-    transform: translate3d(0px, 0px, 0px);
-  }
-
-  100% {
-    transform: translate3d(20px, -20px, 0px);
-  }
-}
 
 @-moz-keyframes haloside {
-  0% {
-    transform: translate3d(-20px, 0px, 0px);
-  }
+   */
+@keyframes halopulse {
+    0% {
 
+    transform-origin: center center;
+  }
   50% {
-    transform: translate3d(0px, 0px, 0px);
+      transform: scale(0.88) translateY(-5%);
   }
-
   100% {
-    transform: translate3d(20px, -20px, 0px);
-  }
-}
-
-@keyframes haloside {
-  0% {
-    transform: translate3d(-20px, 0px, 0px);
-  }
-
-  50% {
-    transform: translate3d(0px, 0px, 0px);
-  }
-
-  100% {
-    transform: translate3d(20px, -20px, 0px);
+    transform-origin: center center;
   }
 }
