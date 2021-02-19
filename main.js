@@ -46,8 +46,12 @@ var haloSide = document.querySelectorAll('.side');
 messageButton.addEventListener('click', receiveMessage);
 mantraRadio.addEventListener('click', selectMessageType);
 affirmationRadio.addEventListener('click', selectMessageType);
-messageSection.onmouseover = animateHalo;
-messageSection.onmouseout = animateHalo;
+// messageSection.onmouseover = animateHalo;
+// messageSection.onmouseout = animateHalo;
+messageSection.onmouseover = sectionBackgroundHover;
+messageSection.onmouseout = sectionBackgroundOut;
+selectSection.onmouseover = sectionBackgroundHover;
+selectSection.onmouseout = sectionBackgroundOut;
 
 function generateRandomNum(arr) {
   return Math.floor(Math.random() * arr.length)
@@ -109,4 +113,16 @@ function selectMessageType() {
   } else {
     body.classList.remove('mantras-background')
   }
+}
+function sectionBackgroundHover() {
+  if (this === messageSection) {
+  animateHalo();
+}
+  this.style.background = '#EAF9FA';
+}
+function sectionBackgroundOut() {
+  if (this === messageSection) {
+  animateHalo();
+}
+  this.style.background = 'white';
 }

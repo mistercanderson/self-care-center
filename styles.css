@@ -17,8 +17,7 @@ body {
 }
 
 .mantras-background {
-  background: linear-gradient(to bottom, #F2AAC5, #78a7c6, #134d71);
-  opacity: 1;
+  background-image: linear-gradient(to bottom, #F2AAC5, #78a7c6, #134d71);
 }
 
 main {
@@ -76,11 +75,6 @@ label {
   transition: background-color 0.5s ease-in;
 }
 
-.message-select:hover {
-  background: #EAF9FA;
-  transition: background-color 0.5s ease-in;
-}
-
 .radio-inputs {
   width: 30vw;
   display: flex;
@@ -131,11 +125,6 @@ label {
   transition: background-color 0.5s ease-in;
 }
 
-.notification:hover {
-  background: #EAF9FA;
-  transition: background-color 0.5s ease-in;
-}
-
 .message {
   padding: 2vw 0;
   transition: opacity 4s ease-in;
@@ -158,50 +147,55 @@ label {
 }
 
 .halo-mid {
-  /* -webkit-animation: halomid 0.75s ease-in infinite alternate;
-  -moz-animation: halomid 0.75s ease-in infinite alternate;
-  -o-animation: halomid 0.75s ease-in infinite alternate; */
+  -webkit-animation: halopulse 0.75s ease-in-out alternate infinite;
+  -moz-animation: halopulse 0.75s ease-in-out alternate infinite;
+  -o-animation: halopulse 0.75s ease-in-out alternate infinite;
   animation: halopulse 0.75s ease-in-out alternate infinite;
 }
 .halo-side {
-  /* -webkit-animation: haloside 0.75s ease-in infinite alternate;
-  -moz-animation: haloside 0.75s ease-in infinite alternate;
-  -o-animation: haloside 0.75s ease-in infinite alternate; */
+  -webkit-animation: halopulse 0.75s ease-in-out alternate infinite;
+  -moz-animation: halopulse 0.75s ease-in-out alternate infinite;
+  -o-animation: halopulse 0.75s ease-in-out alternate infinite;
   animation: halopulse 0.75s ease-in-out alternate infinite;
   animation-delay: 0.05s;
 }
-.body-parts {
-  /* z-index: 0; */
-}
-.halo-parts {
-  /* position: relative;
-  z-index: -1; */
-}
 
-/* @-webkit-keyframes halomid {
+@-webkit-keyframes halopulse {
+    0% {
 
-@-o-keyframes halomid {
-
-@-moz-keyframes halomid { */
-
-@keyframes halorotate {
-  0% {
     transform-origin: center center;
-
+  }
+  50% {
+      transform: scale(0.88) translateY(-5%);
   }
   100% {
     transform-origin: center center;
-    transform: rotate3d(0, 2, -1, 360deg);
   }
 }
-/* @-webkit-keyframes haloside {
+@-o-keyframes halopulse {
+    0% {
 
+    transform-origin: center center;
+  }
+  50% {
+      transform: scale(0.88) translateY(-5%);
+  }
+  100% {
+    transform-origin: center center;
+  }
+}
+@-moz-keyframes halopulse {
+    0% {
 
-@-o-keyframes haloside {
-
-
-@-moz-keyframes haloside {
-   */
+    transform-origin: center center;
+  }
+  50% {
+      transform: scale(0.88) translateY(-5%);
+  }
+  100% {
+    transform-origin: center center;
+  }
+}
 @keyframes halopulse {
     0% {
 
