@@ -145,7 +145,7 @@ label {
   position: absolute;
   width: 10em;
   height: 6em;
-  transition: opacity 2s ease-in;
+  transition: opacity 0.5s ease-in;
 }
 
 .hidden-icon {
