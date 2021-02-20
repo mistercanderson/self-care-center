@@ -70,6 +70,8 @@ function playAudioSelect() {
 }
 
 function playAudioMessage() {
+  affirmationMessage.volume = 0.2;
+  mantraMessage.volume = 0.2;
   for (var i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
       var selection = radios[i].value;
