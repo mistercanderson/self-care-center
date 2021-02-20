@@ -126,6 +126,7 @@ label {
 }
 
 .message {
+  text-align: center;
   padding: 2vw 0;
   transition: opacity 4s ease-in;
 }
@@ -141,6 +142,7 @@ label {
   opacity: 0;
   transition: opacity 5s ease-out;
 }
+
 .hidden {
   opacity: 0;
   transition: opacity 0.5s ease-out;
@@ -152,6 +154,7 @@ label {
   -o-animation: halopulse 0.75s ease-in-out alternate infinite;
   animation: halopulse 0.75s ease-in-out alternate infinite;
 }
+
 .halo-side {
   -webkit-animation: halopulse 0.75s ease-in-out alternate infinite;
   -moz-animation: halopulse 0.75s ease-in-out alternate infinite;
@@ -161,50 +164,106 @@ label {
 }
 
 @-webkit-keyframes halopulse {
-    0% {
-
+  0% {
     transform-origin: center center;
   }
+
   50% {
-      transform: scale(0.88) translateY(-5%);
+    transform: scale(0.88) translateY(-5%);
   }
+
   100% {
     transform-origin: center center;
   }
 }
+
 @-o-keyframes halopulse {
-    0% {
-
+  0% {
     transform-origin: center center;
   }
+
   50% {
-      transform: scale(0.88) translateY(-5%);
+    transform: scale(0.88) translateY(-5%);
   }
+
   100% {
     transform-origin: center center;
   }
 }
+
 @-moz-keyframes halopulse {
-    0% {
-
+  0% {
     transform-origin: center center;
   }
+
   50% {
-      transform: scale(0.88) translateY(-5%);
+    transform: scale(0.88) translateY(-5%);
   }
+
   100% {
     transform-origin: center center;
   }
 }
-@keyframes halopulse {
-    0% {
 
+@keyframes halopulse {
+  0% {
     transform-origin: center center;
   }
+
   50% {
-      transform: scale(0.88) translateY(-5%);
+    transform: scale(0.88) translateY(-5%);
   }
+
   100% {
     transform-origin: center center;
+  }
+}
+
+@media (min-width: 480px) {
+  main {
+    margin-top: 500px;
+  }
+
+  .title {
+    font-size: 8vw;
+  }
+
+  .prompt {
+    font-size: 4vw;
+  }
+
+  .message-select {
+    width: 80%;
+    height: 20vw;
+    padding: 3%;
+    font-size: 2.9vw;
+    margin-bottom: 10vw;
+  }
+
+  .notification {
+    width: 80%;
+    height: 20vw;
+    padding: 5%;
+  }
+
+  .radio-inputs {
+    width: 60%;
+    padding-top: 1em;
+  }
+
+  .receive-button {
+    font-size: 1.5rem;
+    width: 30%;
+    height: 4rem;
+    padding: 0;
+  }
+
+  .bell {
+    width: 20em;
+    height: 100%;
+  }
+
+  .message {
+    font-size: 5vw;
   }
 }
