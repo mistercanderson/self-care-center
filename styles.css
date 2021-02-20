@@ -260,10 +260,19 @@ label {
 
   .bell {
     width: 20em;
-    height: 100%;
+    height: 20em;
   }
 
   .message {
     font-size: 5vw;
+  }
+  .hidden-icon {
+    opacity: 0;
+    transition: opacity 5s ease-out;
+  }
+
+  .hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease-out;
   }
 }

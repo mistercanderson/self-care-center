@@ -46,8 +46,7 @@ var haloSide = document.querySelectorAll('.side');
 messageButton.addEventListener('click', receiveMessage);
 mantraRadio.addEventListener('click', selectMessageType);
 affirmationRadio.addEventListener('click', selectMessageType);
-// messageSection.onmouseover = animateHalo;
-// messageSection.onmouseout = animateHalo;
+
 messageSection.onmouseover = sectionBackgroundHover;
 messageSection.onmouseout = sectionBackgroundOut;
 selectSection.onmouseover = sectionBackgroundHover;
@@ -86,6 +85,7 @@ function animateHalo() {
 }
 
 function receiveMessage() {
+  event.preventDefault();
   if (message.classList.contains('hidden')) {
     mantraOrAffirmation();
     animateHalo();
