@@ -42,6 +42,10 @@ var selectSection = document.querySelector('.message-select');
 var messageSection = document.querySelector('.notification');
 var haloMid = document.querySelector('.mid');
 var haloSide = document.querySelectorAll('.side');
+var affirmationMessage = new Audio('audio/affirmation-message.mp3');
+var mantraMessage = new Audio('audio/mantra-message.mp3');
+var affirmationSelect = new Audio('audio/affirmation-select.mp3');
+var mantraSelect = new Audio('audio/mantra-select.mp3');
 
 messageButton.addEventListener('click', receiveMessage);
 mantraRadio.addEventListener('click', selectMessageType);
@@ -51,6 +55,34 @@ messageSection.onmouseover = sectionBackgroundHover;
 messageSection.onmouseout = sectionBackgroundOut;
 selectSection.onmouseover = sectionBackgroundHover;
 selectSection.onmouseout = sectionBackgroundOut;
+
+function playAudioSelect() {
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      var selection = radios[i].value;
+      if (selection === 'affirmations') {
+        affirmationSelect.play();
+      } else if (selection === 'mantras') {
+        mantraSelect.play();
+      }
+    }
+  }
+}
+
+function playAudioMessage() {
+  for (var i = 0; i < radios.length; i++) {
+    if (radios[i].checked) {
+      var selection = radios[i].value;
+      if (selection === 'affirmations' &&
+        message.classList.contains('hidden')) {
+        affirmationMessage.play();
+      } else if (selection === 'mantras' &&
+        message.classList.contains('hidden')) {
+        mantraMessage.play();
+      }
+    }
+  }
+}
 
 function generateRandomNum(arr) {
   return Math.floor(Math.random() * arr.length)
@@ -86,6 +118,7 @@ function animateHalo() {
 
 function receiveMessage() {
   event.preventDefault();
+  playAudioMessage();
   if (message.classList.contains('hidden')) {
     mantraOrAffirmation();
     animateHalo();
@@ -102,6 +135,7 @@ function receiveMessage() {
 }
 
 function selectMessageType() {
+  playAudioSelect();
   if (meditationIcon.classList.contains('hidden-icon') &&
     message.innerText === 'Please select a message type ⬆️') {
     message.innerText = 'Sounds good. Hit \'Clear\' to begin. '
@@ -114,15 +148,17 @@ function selectMessageType() {
     body.classList.remove('mantras-background')
   }
 }
+
 function sectionBackgroundHover() {
   if (this === messageSection) {
-  animateHalo();
-}
+    animateHalo();
+  }
   this.style.background = '#EAF9FA';
 }
+
 function sectionBackgroundOut() {
   if (this === messageSection) {
-  animateHalo();
-}
+    animateHalo();
+  }
   this.style.background = 'white';
 }
