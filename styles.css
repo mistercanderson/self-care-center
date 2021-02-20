@@ -219,7 +219,7 @@ label {
   }
 }
 
-@media screen and (max-device-width: 480px) {
+@media only screen and (max-device-width: 480px) {
   main {
     margin-top: 20vh;
   }
