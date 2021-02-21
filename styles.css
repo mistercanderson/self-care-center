@@ -163,6 +163,20 @@ label {
   animation-delay: 0.05s;
 }
 
+.mute {
+  font-size: 1.8vw;
+  width: 1rem;
+  background: none;
+  border: none;
+  position: absolute;
+  margin-right: -31vw;
+  margin-top: 10.6vw;
+}
+
+.mute:focus {
+  outline: 0;
+}
+
 @-webkit-keyframes halopulse {
   0% {
     transform-origin: center center;
@@ -253,9 +267,9 @@ label {
 
   .receive-button {
     font-size: 1em;
-   width: 6em;
-   height: 2rem;
-   padding: 0;
+    width: 6em;
+    height: 2rem;
+    padding: 0;
   }
 
   .bell {
@@ -266,6 +280,16 @@ label {
   .message {
     font-size: 5vw;
   }
+
+  .mute {
+    font-size: 2.8vw;
+    background: none;
+    border: none;
+    position: absolute;
+    margin-right: -60vw;
+    margin-top: 19.4vw;
+  }
+
   .hidden-icon {
     opacity: 0;
     transition: opacity 5s ease-out;
