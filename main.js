@@ -42,19 +42,46 @@ var selectSection = document.querySelector('.message-select');
 var messageSection = document.querySelector('.notification');
 var haloMid = document.querySelector('.mid');
 var haloSide = document.querySelectorAll('.side');
+var muteButton = document.querySelector('.mute')
 var affirmationMessage = new Audio('audio/affirmation-message.mp3');
 var mantraMessage = new Audio('audio/mantra-message.mp3');
 var affirmationSelect = new Audio('audio/affirmation-select.mp3');
 var mantraSelect = new Audio('audio/mantra-select.mp3');
 
+window.addEventListener('load', mute);
 messageButton.addEventListener('click', receiveMessage);
 mantraRadio.addEventListener('click', selectMessageType);
 affirmationRadio.addEventListener('click', selectMessageType);
+muteButton.addEventListener('click', volumeControl)
 
 messageSection.onmouseover = sectionBackgroundHover;
 messageSection.onmouseout = sectionBackgroundOut;
 selectSection.onmouseover = sectionBackgroundHover;
 selectSection.onmouseout = sectionBackgroundOut;
+
+function mute() {
+  event.preventDefault();
+  affirmationMessage.volume = 0;
+  mantraMessage.volume = 0;
+  affirmationSelect.volume = 0;
+  mantraSelect.volume = 0;
+}
+function unmute() {
+  affirmationMessage.volume = 0.2;
+  mantraMessage.volume = 0.2;
+  affirmationSelect.volume = 1;
+  mantraSelect.volume = 1;
+}
+
+function volumeControl() {
+  if (muteButton.innerText === '🔇') {
+    muteButton.innerText = '🔈';
+    unmute();
+  } else if (muteButton.innerText === '🔈') {
+    muteButton.innerText = '🔇';
+    mute();
+  }
+}
 
 function playAudioSelect() {
   for (var i = 0; i < radios.length; i++) {
@@ -70,8 +97,8 @@ function playAudioSelect() {
 }
 
 function playAudioMessage() {
-  affirmationMessage.volume = 0.2;
-  mantraMessage.volume = 0.2;
+  // affirmationMessage.volume = 0.2;
+  // mantraMessage.volume = 0.2;
   for (var i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
       var selection = radios[i].value;
