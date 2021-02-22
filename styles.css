@@ -163,17 +163,15 @@ label {
   animation-delay: 0.05s;
 }
 
-.mute {
+.mute-button {
   font-size: 1.8vw;
   width: 1rem;
   background: none;
   border: none;
-  position: absolute;
-  margin-right: -31vw;
-  margin-top: 10.6vw;
+  align-self: flex-end;
 }
 
-.mute:focus {
+.mute-button:focus {
   outline: 0;
 }
 
@@ -262,7 +260,6 @@ label {
 
   .radio-inputs {
     width: 60%;
-    padding-top: 1em;
   }
 
   .receive-button {
@@ -279,15 +276,6 @@ label {
 
   .message {
     font-size: 5vw;
-  }
-
-  .mute {
-    font-size: 2.8vw;
-    background: none;
-    border: none;
-    position: absolute;
-    margin-right: -60vw;
-    margin-top: 19.4vw;
   }
 
   .hidden-icon {

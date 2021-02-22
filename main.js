@@ -42,7 +42,7 @@ var selectSection = document.querySelector('.message-select');
 var messageSection = document.querySelector('.notification');
 var haloMid = document.querySelector('.mid');
 var haloSide = document.querySelectorAll('.side');
-var muteButton = document.querySelector('.mute')
+var muteButton = document.querySelector('.mute-button')
 var affirmationMessage = new Audio('audio/affirmation-message.mp3');
 var mantraMessage = new Audio('audio/mantra-message.mp3');
 var affirmationSelect = new Audio('audio/affirmation-select.mp3');
@@ -60,12 +60,12 @@ selectSection.onmouseover = sectionBackgroundHover;
 selectSection.onmouseout = sectionBackgroundOut;
 
 function mute() {
-  event.preventDefault();
   affirmationMessage.volume = 0;
   mantraMessage.volume = 0;
   affirmationSelect.volume = 0;
   mantraSelect.volume = 0;
 }
+
 function unmute() {
   affirmationMessage.volume = 0.2;
   mantraMessage.volume = 0.2;
@@ -97,8 +97,6 @@ function playAudioSelect() {
 }
 
 function playAudioMessage() {
-  // affirmationMessage.volume = 0.2;
-  // mantraMessage.volume = 0.2;
   for (var i = 0; i < radios.length; i++) {
     if (radios[i].checked) {
       var selection = radios[i].value;
@@ -146,7 +144,6 @@ function animateHalo() {
 }
 
 function receiveMessage() {
-  event.preventDefault();
   playAudioMessage();
   if (message.classList.contains('hidden')) {
     mantraOrAffirmation();
