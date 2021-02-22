@@ -169,6 +169,7 @@ label {
   background: none;
   border: none;
   align-self: flex-end;
+  margin-right: 2.1vw;
 }
 
 .mute-button:focus {
